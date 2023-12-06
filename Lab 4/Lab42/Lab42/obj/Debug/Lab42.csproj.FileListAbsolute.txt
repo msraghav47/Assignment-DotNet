@@ -1,0 +1,7 @@
+C:\Users\M S Raghav\Desktop\C# Assignment\Lab42\Lab42\bin\Debug\Lab42.exe.config
+C:\Users\M S Raghav\Desktop\C# Assignment\Lab42\Lab42\bin\Debug\Lab42.exe
+C:\Users\M S Raghav\Desktop\C# Assignment\Lab42\Lab42\bin\Debug\Lab42.pdb
+C:\Users\M S Raghav\Desktop\C# Assignment\Lab42\Lab42\obj\Debug\Lab42.csproj.AssemblyReference.cache
+C:\Users\M S Raghav\Desktop\C# Assignment\Lab42\Lab42\obj\Debug\Lab42.csproj.CoreCompileInputs.cache
+C:\Users\M S Raghav\Desktop\C# Assignment\Lab42\Lab42\obj\Debug\Lab42.exe
+C:\Users\M S Raghav\Desktop\C# Assignment\Lab42\Lab42\obj\Debug\Lab42.pdb
