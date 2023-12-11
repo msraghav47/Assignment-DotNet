@@ -1,0 +1,409 @@
+Problem 1-
+
+class Program
+{
+    public static void Main()
+    {
+        division(10, 0);
+    }
+
+    public static void division(int a,int b)
+    {
+        try{
+            int c = a / b;
+            Console.WriteLine(c);
+        }
+        catch(DivideByZeroException e)
+        {
+            Console.WriteLine(e);
+        }
+    }
+}
+
+Problem 2:
+  
+    class Program
+{
+    public static void Main()
+    {
+        division();
+    }
+
+    public static void division()
+    {
+
+       
+        try{
+           
+            int[] arr = { 1, 2, 3, 4, 5, 6, 7,8 };
+            
+            Console.WriteLine(arr[8]);
+            
+
+        }
+        catch(FormatException e)
+        {
+            Console.WriteLine(e);
+        }
+    }
+}
+
+
+problem:3
+
+
+class Program
+{
+    public static void Main()
+    {
+        division();
+    }
+
+    public static void division()
+    {
+
+        Console.WriteLine("Enter the String");
+        String s = Console.ReadLine();
+        int x;
+        try{
+           
+             x = int.Parse(s);
+            Console.WriteLine(" " + x);
+
+        }
+        catch(FormatException e)
+        {
+            Console.WriteLine(e);
+        }
+    }
+}
+
+
+Problem:4
+
+
+
+class MyCustomExp:Exception
+{
+    public MyCustomExp(string message) : base(message)
+    {
+
+    }
+}
+class Custom
+{
+    public static void Main()
+    {
+        CustomError();
+    }
+
+    public static void CustomError()
+    {
+
+        Console.WriteLine("Enter the number");
+        int s = Convert.ToInt32(Console.ReadLine());
+        try{
+            if (s<20)
+            {
+                throw new MyCustomExp("Number must be greatre than 20");
+            }
+            Console.WriteLine(s);
+
+        }
+        catch(MyCustomExp ex)
+        {
+            Console.WriteLine(ex.Message);
+        }
+    }
+}
+
+
+Problem:5
+
+
+
+class Custom
+{
+    public static void Main()
+    {
+        MultipleException(20, 5, "12",2);
+    }
+
+    public static void MultipleException(int a,int b,string str,int index)
+    {
+        int[] arr = { 1, 2, 3, 4 };
+        try
+        {
+            int c = a / b;
+            Console.WriteLine(c);
+            int d = int.Parse(str);
+            Console.WriteLine(d);
+            Console.WriteLine(arr[index]);
+            int r = d * 5;
+            Console.WriteLine(r);
+        }
+        catch(DivideByZeroException ex)
+        {
+            Console.WriteLine(ex.Message);
+        }
+        catch(FormatException fr)
+        {
+            Console.WriteLine(fr.Message);
+        }
+        catch(IndexOutOfRangeException ir)
+        {
+            Console.WriteLine(ir.Message);
+        }
+        catch(InvalidOperationException en)
+        {
+            Console.WriteLine(en.Message);
+        }
+    }
+}
+
+
+Problem:6
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Assignment5
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            vote(12, 'f');
+            Console.ReadLine();
+        }
+
+        public static void vote(int age ,char gender)
+        {
+            try
+            {
+                if (age < 18)
+                {
+                    try
+                    {
+                        if(gender=='F' || gender == 'f')
+                        {
+                            throw new Exception("Female less than 18 not eligible");
+
+                        }
+                        else
+                        {
+                            Console.WriteLine("Eligible for Vote");
+                        }
+                    }
+                    catch(DataMisalignedException e)
+                    {
+                        Console.WriteLine("Exception Occurred");
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("Eligible for Vote");
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+        }
+    }
+
+}
+Problem 7 :
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Assignment5
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            divisionFun();   
+            Console.ReadLine();
+        }
+
+        public static void divisionFun()
+        {
+            int flag = 0;
+            int a, b;
+            while (flag != 1)
+            {
+                try
+                {
+                    Console.WriteLine("Enter two Numbers");
+
+                    a = Convert.ToInt32(Console.ReadLine());
+                    b = Convert.ToInt32(Console.ReadLine());
+                    int c = a / b;
+                    Console.WriteLine("Result is " + c);
+                    flag = 1;
+                }
+                catch (DivideByZeroException e)
+                {
+                    Console.WriteLine(e.Message);
+                    flag = 0;
+                }
+            }
+          
+        }
+       
+    }
+
+}
+
+Problem 8:
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Assignment5
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            try
+            {
+                int result = DivideByZero();
+                Console.Write(result);
+            }
+            catch(DivideByZeroException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+
+            Console.ReadLine();
+        }
+        static int DivideByZero()
+        {
+            int numerator = 10;
+            int denominator = 0;
+
+            try
+            {
+                return numerator / denominator;
+            }
+            catch (DivideByZeroException ex)
+            {
+                Console.WriteLine("Exception in DivideByZero method: " + ex.Message);
+                throw;
+            }
+        }
+    }
+} Problem 9:
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Assignment5
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            calculator();
+            Console.ReadLine();
+        }
+        public static void calculator()
+        {
+            Console.WriteLine("Enter your choice");
+            Console.WriteLine("1 - Addition");
+            Console.WriteLine("2 - Substraction");
+            Console.WriteLine("3 - Division");
+            Console.WriteLine("4 - Multiplication");
+            try
+            {
+                int choice = Convert.ToInt32(Console.ReadLine());
+                
+                
+                if (choice == 1)
+                {
+                    Console.WriteLine("Enter Two Numbers");
+                    int a = Convert.ToInt32(Console.ReadLine());
+                    int b = Convert.ToInt32(Console.ReadLine());
+                    Console.WriteLine("Sum is " + (a + b));
+                }
+               else if (choice == 2)
+                {
+                    Console.WriteLine("Enter Two Numbers");
+                    int a = Convert.ToInt32(Console.ReadLine());
+                    int b = Convert.ToInt32(Console.ReadLine());
+                    if (b>a)
+                    {
+                        throw new Exception("second number should be lesser than first number");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Result is " + (a - b));
+                    }
+                }
+
+                else if (choice == 3)
+                {
+                    Console.WriteLine("Enter Two Numbers");
+                    int a = Convert.ToInt32(Console.ReadLine());
+                    int b = Convert.ToInt32(Console.ReadLine());
+                    int c = a / b;
+                    Console.WriteLine("Result is " + c);
+                }
+                else if (choice == 4)
+                {
+                    Console.WriteLine("Enter Two Numbers");
+                    int a = Convert.ToInt32(Console.ReadLine());
+                    int b = Convert.ToInt32(Console.ReadLine());
+                    Console.WriteLine("Result is "+(a*b));
+                }
+                else
+                {
+                    throw new Exception("Enter valid choice");
+                }
+
+            }
+            catch(DivideByZeroException e)
+            {
+                Console.WriteLine(e.Message);
+            }
+            catch(FormatException e)
+            {
+                Console.WriteLine(e.Message);
+            }
+            catch(Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+            
+            
+        }
+        
+       
+    }
+
+}
+
+Problem 10 :
+
+
+
+
+
+
+
+
+
+
